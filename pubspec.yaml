@@ -1,0 +1,17 @@
+name: dargon2_interface
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+homepage: https://github.com/tmthecoder/dargon2
+repository: https://github.com/tmthecoder/dargon2
+
+environment:
+  sdk: '>=2.15.0 <3.0.0'
+
+
+dependencies:
+  convert: ^3.0.1
+
+
+dev_dependencies:
+  lints: ^1.0.0
+  test: ^1.16.0
