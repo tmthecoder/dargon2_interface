@@ -36,7 +36,6 @@ enum Argon2Version {
 ///
 /// This should be used via the [argon2] field.
 abstract class DArgon2 {
-
   /// The Future method to hash a [String] password with Argon2
   ///
   /// Needs a UTF-8 String [password] and a [salt] to be given with
@@ -47,14 +46,21 @@ abstract class DArgon2 {
   /// Returns a [Future] containing a [DArgon2Result] with the hashed password,
   /// encoded hash, and various conversion options for the hash and encoded bytes.
   Future<DArgon2Result> hashPasswordString(String password,
-      {required Salt salt,
-      int iterations = 32,
-      int memory = 256,
-      int parallelism = 2,
-      int length = 32,
-      Argon2Type type = Argon2Type.i,
-      Argon2Version version = Argon2Version.V13}) =>
-      hashPasswordBytes(utf8.encode(password), salt: salt, iterations: iterations, memory: memory, parallelism: parallelism, length: length, type: type, version: version);
+          {required Salt salt,
+          int iterations = 32,
+          int memory = 256,
+          int parallelism = 2,
+          int length = 32,
+          Argon2Type type = Argon2Type.i,
+          Argon2Version version = Argon2Version.V13}) =>
+      hashPasswordBytes(utf8.encode(password),
+          salt: salt,
+          iterations: iterations,
+          memory: memory,
+          parallelism: parallelism,
+          length: length,
+          type: type,
+          version: version);
 
   /// The Future method to hash a List<int> password with Argon2
   ///
@@ -82,7 +88,9 @@ abstract class DArgon2 {
   ///
   /// Returns a [Future] with the [bool] of whether the hashing was a match or not
   Future<bool> verifyHashString(String password, String encodedHash,
-      {Argon2Type type = Argon2Type.i}) => verifyHashBytes(utf8.encode(password), utf8.encode(encodedHash), type: type);
+          {Argon2Type type = Argon2Type.i}) =>
+      verifyHashBytes(utf8.encode(password), utf8.encode(encodedHash),
+          type: type);
 
   /// The Future method to handle verifying a List<int> argon2 hash against a List<int> password
   ///
