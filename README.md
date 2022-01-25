@@ -1,5 +1,11 @@
 ## dargon2_interface
 
+# NOTE: Archive
+
+This repository has been archived. Don't worry, `dargon2_flutter` is still in development with full support! I've just moved this repository and all dargon2 components into a single `dargon2` repository: https://github.com/tmthecoder/dargon2
+
+---
+
 This library generally should not be used in most contexts
 
 This library only provides an interface to implement a dargon2-compatible argon2 hash binding.
